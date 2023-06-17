@@ -5,16 +5,20 @@ import {OnOff} from './components/OnOff/OnOff';
 import {Rating} from './components/Rating/Rating';
 import {Accordion} from './components/Accordion/Accordion';
 import {UncontrolledAccordion} from './components/UncontrolledAccordion/UncontrolledAccordion';
+import {UncontrolledRating} from './components/UncontrolledRating/UncontrolledRating';
 
 function App(props: any) {
     console.log('APP component is RENDERING.......')
     return (
-        <div>
+        <div className={'App'}>
             <OnOff/>
             <OnOff/>
             <OnOff/>
             <UncontrolledAccordion titleValue={'Menu'} />
             <UncontrolledAccordion titleValue={'Users'} />
+
+            <UncontrolledRating />
+            <Rating value={3}/>
 
 {/*            <PageTitle title={'This is APP component!'}/>
             <PageTitle title={'My friends!'}/>
