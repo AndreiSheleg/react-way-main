@@ -12,22 +12,21 @@ export const UncontrolledAccordion = (props: AccordionPropsType) => {
 
         return (
             <div>
-                <AccordionTitle title={props.titleValue}/>
-                <button onClick={ () => { setCollapsed(!collapsed) } }>TOGLE</button>
+                <AccordionTitle title={props.titleValue} onClick={ () => {setCollapsed(!collapsed)} }/>
+                {/*<button onClick={ () => { setCollapsed(!collapsed) } }>TOGLE</button>*/}
                 {!collapsed && <AccordionBody/>}
             </div>
         );
-
-
 };
 
 type AccordionTitlePropsType = {
     title: string
+    onClick: () => void
 }
 
 const AccordionTitle = (props: AccordionTitlePropsType) => {
     console.log('AccordionTitle Component is rendering...')
-    return <h3>--- {props.title} ---</h3>
+    return <h3 onClick={ () => {props.onClick() } }>--- {props.title} ---</h3>
 }
 
 const AccordionBody = () => {

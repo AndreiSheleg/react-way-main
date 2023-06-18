@@ -18,7 +18,7 @@ function App(props: any) {
             <UncontrolledAccordion titleValue={'Users'} />
 
             <UncontrolledRating />
-            <Rating value={3}/>
+            {/*<Rating value={3}/>*/}
 
 {/*            <PageTitle title={'This is APP component!'}/>
             <PageTitle title={'My friends!'}/>
