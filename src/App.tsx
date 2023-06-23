@@ -12,18 +12,25 @@ function App(props: any) {
     console.log('APP component is RENDERING.......')
     let [ratingValue, setRatingValue] = useState<RatingValueType>(4)
     let [accordionCollapsed, setAccordionCollapsed] = useState<boolean>(false)
-    let [on, setOn] = useState<boolean>(false)
+    let [switchOn, setswitchOn] = useState<boolean>(false)
 
     return (
         <div className={'App'}>
-            <OnOff valueOn={on} onClick={setOn} />
+            {/*<OnOff on={switchOn}
+                   onChange={setswitchOn} />*/}
+
+            <UncontrolledOnOff onChange={setswitchOn}/>
+            {switchOn.toString()}
 
             {/*<UncontrolledAccordion titleValue={'Menu'} />*/}
             {/*<UncontrolledAccordion titleValue={'Users'} />*/}
-            <Accordion titleValue={'***MENU***'} collapsed={accordionCollapsed} onClick={setAccordionCollapsed} />
+            <Accordion titleValue={'***MENU***'} collapsed={accordionCollapsed}
+                       onChange={ () => setAccordionCollapsed(!accordionCollapsed) } />
 
-{/*            <UncontrolledRating />
-            <Rating value={ratingValue} onClick={setRatingValue} />*/}
+            <UncontrolledRating />
+            <Rating value={ratingValue} onClick={setRatingValue} />
+
+            <UncontrolledAccordion titleValue={'BlaBlaBla'} />
 
         </div>
     );
