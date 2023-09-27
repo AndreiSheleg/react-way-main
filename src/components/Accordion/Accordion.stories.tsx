@@ -4,33 +4,37 @@ import type {Meta, StoryObj} from '@storybook/react';
 
 import {Accordion} from './Accordion';
 import React, {useState} from 'react';
+import { action } from '@storybook/addon-actions';
 
-const meta: Meta<typeof Accordion> = {
+export default {
     component: Accordion,
 };
 
-export default meta;
-/*НИЖЕ ВАЖНАЯ ТИПИЗАЦИЯ ОБЪЕКТА ИСТОРИЙ*/
-type Story = StoryObj<typeof Accordion>;
 
-export const FirstStory: Story = {
-    args: {
-        titleValue: 'hello',
-        collapsed: true,
-        onChange: () => {}
-    },
-};
+/*НИЖЕ ВАЖНАЯ ТИПИЗАЦИЯ ОБЪЕКТА ИСТОРИЙ*/
+// type Story = StoryObj<typeof Accordion>;
+//
+// export const FirstStory: Story = {
+//     args: {
+//         titleValue: 'hello',
+//         collapsed: true,
+//         onChange: () => {}
+//     },
+// };
+
+//СОЗДАЁМ ФУНКЦИЮ-КОЛЛБЭК НА ОСНОВЕ FUNCTION-ACTION
+const onChangeHandler = action('нажатие на заголовок')
 
 export const CollapsedAccordion = () => {
     return <Accordion titleValue={'История Collapsed Accordion'}
                       collapsed={true}
-                      onChange={() => {} }/>
+                      onChange={onChangeHandler}/>
 }
 
 export const OpenedAccordion = () => {
     return <Accordion titleValue={'История Opened Accordion'}
                       collapsed={false}
-                      onChange={() => {} }/>
+                      onChange={onChangeHandler}/>
 }
 
 export const AccordionDemo = () => {
