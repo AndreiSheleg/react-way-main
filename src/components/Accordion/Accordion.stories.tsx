@@ -6,12 +6,13 @@ import {Accordion} from './Accordion';
 import React, {useState} from 'react';
 import { action } from '@storybook/addon-actions';
 
+/*НИЖЕ ВАЖНАЯ ТИПИЗАЦИЯ ОБЪЕКТА ИСТОРИЙ - старый синтаксис, который ближе к реакту*/
 export default {
     component: Accordion,
 };
 
 
-/*НИЖЕ ВАЖНАЯ ТИПИЗАЦИЯ ОБЪЕКТА ИСТОРИЙ*/
+/*НИЖЕ ВАЖНАЯ ТИПИЗАЦИЯ ОБЪЕКТА ИСТОРИЙ - новый синтаксис*/
 // type Story = StoryObj<typeof Accordion>;
 //
 // export const FirstStory: Story = {
