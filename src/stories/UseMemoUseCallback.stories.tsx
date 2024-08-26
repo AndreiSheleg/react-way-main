@@ -103,7 +103,7 @@ export const LikeUseCallback = () => {
         </button>
 
         {counter}
-        <Book addBook={memoizedAddBook}/>
+        <Book addBook={memoizedAddBook2}/>
     </>
 }
 
