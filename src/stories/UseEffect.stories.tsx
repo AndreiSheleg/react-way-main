@@ -26,7 +26,27 @@ export const SimpleExample = () => {
 
     return <>
         Hello, {counter} {fake}!
-        <button onClick={()=> setFake(fake + 10)}>fake+</button>
-        <button onClick={()=> setCounter(fake + 10)}>counter+</button>
+        <button onClick={() => setFake(fake + 10)}>fake+</button>
+        <button onClick={() => setCounter(fake + 10)}>counter+</button>
+    </>
+}
+
+export const SetTimeoutExample = () => {
+    const [fake, setFake] = useState(10000)
+    const [counter, setCounter] = useState(100)
+    console.log('SetTimeoutExample')
+
+// useEffect срабатывает только после отображения разметки на странице
+    useEffect(() => {
+        setInterval(() => {
+            console.log('tick: ' + counter)
+            setCounter(counter + 1)
+        }, 1000);
+    }, [])
+
+    return <>
+        Hello, counter: {counter} - fake: {fake}
+        {/*<button onClick={()=> setFake(fake + 10)}>fake+</button>*/}
+        {/*<button onClick={()=> setCounter(fake + 10)}>counter+</button>*/}
     </>
 }
